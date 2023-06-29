@@ -12,10 +12,9 @@
     combos {
         compatible = "zmk,combos";
 
-        new_combo {
-            bindings = <&kp GRAVE>;
-            key-positions = <36 0>;
-            layers = <0>;
+        empty_layer {
+            bindings = <&tog 4>;
+            key-positions = <42 43 53 54>;
         };
     };
 
@@ -57,7 +56,7 @@
   &kp ESC  &kp N1  &kp N2     &kp N3        &kp N4     &kp N5                                                &kp N6  &kp N7      &kp N8   &kp N9    &kp N0      &kp MINUS
   &kp TAB   &kp Q   &kp W      &kp E         &kp R      &kp T                                                 &kp Y   &kp U       &kp I    &kp O     &kp P  &kp BACKSLASH
     &mo 1   &kp A   &kp S      &kp D         &kp F      &kp G                                                 &kp H   &kp J       &kp K    &kp L  &kp SEMI        &kp SQT
-&kp LSHFT   &kp Z   &kp X      &kp C         &kp V      &kp B                &kp LBKT          &kp B          &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH      &kp RSHFT
+&kp LSHFT   &kp Z   &kp X      &kp C         &kp V      &kp B               &kp ENTER          &kp B          &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH      &kp RSHFT
                            &kp LCTRL  &kp LEFT_ALT  &kp SPACE  &mt LEFT_COMMAND ENTER    &lt 1 SPACE  &kp BACKSPACE   &mo 2  &kp DELETE
             >;
         };
@@ -71,10 +70,10 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp GRAVE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &bt BT_SEL 4  &trans                        &trans          &trans          &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp EQUAL
-   &trans        &trans        &trans        &trans        &trans  &trans                        &trans          &trans    &kp UP_ARROW            &trans             &trans     &trans
-   &trans        &trans        &trans        &trans        &trans  &trans                        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW             &trans  &kp TILDE
-   &trans        &trans        &trans        &trans        &trans  &trans  &trans    &bt BT_CLR  &trans          &trans          &trans          &kp LBRC           &kp RBRC     &trans
+&kp GRAVE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &bt BT_SEL 4  &trans                        &trans          &trans          &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &kp EQUAL
+   &trans        &trans        &trans        &trans        &trans  &trans                        &trans          &trans    &kp UP_ARROW            &trans             &trans      &kp PG_UP
+   &trans        &trans        &trans        &trans        &trans  &trans                        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW             &trans  &kp PAGE_DOWN
+   &trans        &trans        &trans        &trans        &trans  &trans  &trans    &bt BT_CLR  &trans          &trans          &trans          &kp LBRC           &kp RBRC         &trans
                                              &trans        &trans  &trans  &trans        &trans  &trans          &trans          &trans
             >;
         };
@@ -96,6 +95,16 @@
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
+
+        empty {
+            bindings = <
+&none  &none  &none  &none  &none  &none                  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none  &none
+                     &none  &none  &none  &none    &none  &none  &none  &none
             >;
         };
     };

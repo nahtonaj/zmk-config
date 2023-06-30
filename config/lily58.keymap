@@ -12,14 +12,14 @@
     combos {
         compatible = "zmk,combos";
 
-        empty_layer {
-            bindings = <&suspend>;
-            key-positions = <42 43 53 54>;
+        suspend_right {
+            bindings = <&to 3>;
+            key-positions = <43 54 49>;
         };
 
-        default_layer {
+        suspend_left {
             bindings = <&to 0>;
-            key-positions = <42 43 49 36>;
+            key-positions = <53 42 36>;
         };
     };
 

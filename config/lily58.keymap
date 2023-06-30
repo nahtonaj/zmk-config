@@ -13,12 +13,12 @@
         compatible = "zmk,combos";
 
         suspend_right {
-            bindings = <&to 3>;
+            bindings = <&suspend>;
             key-positions = <43 54 49>;
         };
 
         suspend_left {
-            bindings = <&to 0>;
+            bindings = <&suspend>;
             key-positions = <53 42 36>;
         };
     };

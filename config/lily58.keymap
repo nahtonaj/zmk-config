@@ -13,7 +13,7 @@
         compatible = "zmk,combos";
 
         empty_layer {
-            bindings = <&to 3>;
+            bindings = <&suspend>;
             key-positions = <42 43 53 54>;
         };
 

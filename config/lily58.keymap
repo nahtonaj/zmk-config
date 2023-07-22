@@ -75,11 +75,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp GRAVE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &bt BT_SEL 4  &trans                    &bt BT_CLR          &trans          &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &kp EQUAL
-   &trans        &trans        &trans        &trans        &trans  &trans                        &trans          &trans    &kp UP_ARROW            &trans             &trans      &kp PG_UP
-   &trans        &trans        &trans        &trans        &trans  &trans                        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW             &trans  &kp PAGE_DOWN
-   &trans        &trans        &trans        &trans        &trans  &trans  &trans    &trans      &trans          &trans          &trans          &kp LBRC           &kp RBRC         &trans
-                                             &trans        &trans  &trans  &trans    &trans      &trans          &trans          &trans
+&kp GRAVE        &trans        &trans        &trans        &trans        &trans                    &bt BT_CLR          &trans          &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &kp EQUAL
+   &trans        &trans        &trans        &trans        &trans        &trans                        &trans          &trans    &kp UP_ARROW            &trans             &trans      &kp PG_UP
+   &trans        &trans        &trans        &trans        &trans        &trans                        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW             &trans  &kp PAGE_DOWN
+   &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans      &trans          &trans          &trans          &kp LBRC           &kp RBRC         &trans
+                                             &trans        &trans        &trans  &trans    &trans      &trans          &trans          &trans
             >;
         };
 

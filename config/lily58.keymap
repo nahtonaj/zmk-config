@@ -22,9 +22,9 @@
             key-positions = <53 42 36>;
         };
 
-        new_combo {
+        gaming_toggle {
             bindings = <&tog 3>;
-            key-positions = <36 25 14 26 27 52>;
+            key-positions = <36 52 14>;
         };
     };
 

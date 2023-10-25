@@ -69,11 +69,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC                       &kp N1  &kp N2  &kp N3       &kp N4        &kp N5                                                             &kp N6                     &kp N7  &kp N8      &kp N9      &kp N0    &kp MINUS
-&kp TAB                       &kp Q   &kp W   &kp E        &kp R         &kp T                                                              &kp Y                      &kp U   &kp I       &kp O       &kp P     &kp BACKSLASH
-&mt LCTRL LSHIFT              &kp A   &kp S   &kp D        &kp F         &kp G                                                              &kp H                      &kp J   &kp K       &kp L       &kp SEMI  &kp SQT
-&mt LEFT_SHIFT LC(LA(ENTER))  &kp Z   &kp X   &kp C        &kp V         &kp B                 &kp LEFT_BRACKET          &kp RIGHT_BRACKET  &kp N                      &kp M   &kp COMMA   &kp PERIOD  &kp FSLH  &kp RSHFT
-                                              &kp LA(TAB)  &kp LEFT_ALT  &mt LEFT_SHIFT SPACE  &mt LEFT_COMMAND ENTER    &lt 1 SPACE        &mt RIGHT_SHIFT BACKSPACE  &mo 2   &kp DELETE
+&kp ESC                 &kp N1  &kp N2  &kp N3       &kp N4        &kp N5                                                             &kp N6                     &kp N7  &kp N8      &kp N9      &kp N0    &kp MINUS
+&kp TAB                 &kp Q   &kp W   &kp E        &kp R         &kp T                                                              &kp Y                      &kp U   &kp I       &kp O       &kp P     &kp BACKSLASH
+&mt LCTRL LSHIFT        &kp A   &kp S   &kp D        &kp F         &kp G                                                              &kp H                      &kp J   &kp K       &kp L       &kp SEMI  &kp SQT
+&mt LEFT_SHIFT LC(TAB)  &kp Z   &kp X   &kp C        &kp V         &kp B                 &kp LEFT_BRACKET          &kp RIGHT_BRACKET  &kp N                      &kp M   &kp COMMA   &kp PERIOD  &kp FSLH  &mt RIGHT_SHIFT LA(LC(ENTER))
+                                        &kp LA(TAB)  &kp LEFT_ALT  &mt LEFT_SHIFT SPACE  &mt LEFT_COMMAND ENTER    &lt 1 SPACE        &mt RIGHT_SHIFT BACKSPACE  &mo 2   &kp DELETE
             >;
         };
 

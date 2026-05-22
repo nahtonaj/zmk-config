@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: lily58}
 layers:
   default:
-  - ESC
+  - '`'
   - '1'
   - '2'
   - '3'
@@ -25,7 +25,7 @@ layers:
   - O
   - P
   - \
-  - {t: LSHIFT, h: LCTRL}
+  - {t: ESC, h: LCTRL}
   - {t: A, h: LEFT SHIFT}
   - {t: S, h: LEFT GUI}
   - {t: D, h: LEFT ALT}

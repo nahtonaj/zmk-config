@@ -2,12 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: zmksuspend
-      url-base: https://github.com/nahtonaj
   projects:
     - name: zmk
-      remote: zmksuspend
-      revision: main
+      remote: zmkfirmware
+      revision: 19582174f3a446a07d40f479020b4ebb1aad8ddb
       import: app/west.yml
   self:
     path: config

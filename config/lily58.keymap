@@ -8,17 +8,21 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+&lt { quick-tap-ms = <150>; };
+
+&mt { quick-tap-ms = <150>; };
+
 / {
     combos {
         compatible = "zmk,combos";
 
         suspend_right {
-            bindings = <&suspend>;
+            bindings = <&soft_off>;
             key-positions = <43 54 49>;
         };
 
         suspend_left {
-            bindings = <&suspend>;
+            bindings = <&soft_off>;
             key-positions = <53 42 36>;
         };
 
@@ -47,15 +51,30 @@
             tapping-term-ms = <100>;
         };
 
-        hm: hm {
+        lh_pht: left_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
 
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 43 44 45 46 47 48 49 54 55 56 57>;
+            hold-trigger-on-release;
+            require-prior-idle-ms = <150>;
+        };
+
+        rh_pht: right_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42 50 51 52 53>;
+            hold-trigger-on-release;
+            require-prior-idle-ms = <150>;
         };
     };
 
@@ -64,18 +83,19 @@
 
         default_layer {
             // ------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
+            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   -   |
+            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
             // |  CTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
             // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
+            // Homerow mods on row 3: A=LSHIFT, S=LGUI, D=LALT, F=LCTRL, J=RCTRL, K=RALT, L=RGUI, ;=RSHIFT
 
             bindings = <
-&kp ESC                 &kp N1  &kp N2  &kp N3       &kp N4        &kp N5                                                             &kp N6                     &kp N7  &kp N8      &kp N9      &kp N0    &kp MINUS
-&kp TAB                 &kp Q   &kp W   &kp E        &kp R         &kp T                                                              &kp Y                      &kp U   &kp I       &kp O       &kp P     &kp BACKSLASH
-&mt LCTRL LSHIFT        &kp A   &kp S   &kp D        &kp F         &kp G                                                              &kp H                      &kp J   &kp K       &kp L       &kp SEMI  &kp SQT
-&mt LEFT_SHIFT LC(TAB)  &kp Z   &kp X   &kp C        &kp V         &kp B                 &kp LEFT_BRACKET          &kp RIGHT_BRACKET  &kp N                      &kp M   &kp COMMA   &kp PERIOD  &kp FSLH  &mt RIGHT_SHIFT LA(LC(ENTER))
-                                        &kp LA(TAB)  &kp LEFT_ALT  &mt LEFT_SHIFT SPACE  &mt LEFT_COMMAND ENTER    &lt 1 SPACE        &mt RIGHT_SHIFT BACKSPACE  &mo 2   &kp DELETE
+&kp ESC                 &kp N1                &kp N2              &kp N3                &kp N4               &kp N5                                                             &kp N6                     &kp N7               &kp N8                &kp N9                &kp N0                         &kp MINUS
+&kp TAB                 &kp Q                 &kp W               &kp E                 &kp R                &kp T                                                              &kp Y                      &kp U                &kp I                 &kp O                 &kp P                          &kp BACKSLASH
+&mt LCTRL LSHIFT        &lh_pht LEFT_SHIFT A  &lh_pht LEFT_GUI S  &lh_pht LEFT_ALT D    &lh_pht LCTRL F      &kp G                                                              &kp H                      &rh_pht RCTRL J      &rh_pht RIGHT_ALT K   &rh_pht RIGHT_GUI L   &rh_pht RIGHT_SHIFT SEMI       &kp SQT
+&mt LEFT_SHIFT LC(TAB)  &kp Z                 &kp X               &kp C                 &kp V                &kp B                 &kp LEFT_BRACKET          &kp RIGHT_BRACKET  &kp N                      &kp M                &kp COMMA             &kp PERIOD            &kp FSLH                       &mt RIGHT_SHIFT LA(LC(ENTER))
+                                                                  &kp LA(TAB)           &kp LEFT_ALT         &mt LEFT_SHIFT SPACE  &mt LEFT_COMMAND ENTER    &lt 1 SPACE        &mt RIGHT_SHIFT BACKSPACE  &mo 2                &kp DELETE
             >;
         };
 
